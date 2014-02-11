@@ -22,7 +22,10 @@ def dictionary_repeated_words(filename):
     ted = ted.lower()
     OnlyLetter = ""
     for i in range(len(ted)):
-        if (ord(ted[i]) >= ord('a') and ord(ted[i]) < ord('z')) or ted[i] == " ":
+        if not ord(ted[i]) >= ord('a') and ord(ted[i]) < ord('z'):
+            OnlyLetter +=  " "
+            #OnlyLetter += ted[i]
+        else:
             OnlyLetter += ted[i]
     ted_dict = {}
     words = OnlyLetter.split()
