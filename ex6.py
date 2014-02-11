@@ -1,5 +1,6 @@
+from sys import argv
 #import, open, read by line: the twain content
-
+script, filename = argv
 
 #split all the words in the line by " " into a dictionary of words
 #if that word is already in the dictionary,
@@ -30,8 +31,12 @@ def dictionary_repeated_words(filename):
     ted_dict = {}
     words = OnlyLetter.split()
     for word in words:
-        ted_dict[word] = ted_dict.get(word, 0) + 1 
-    print ted_dict
+        ted_dict[word] = ted_dict.get(word, 0) + 1
+
+    for key, value in ted_dict.iteritems():
+        print key, value
 
 print dictionary_repeated_words('test.txt')
+
+
 
